@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px; /* Increase padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 40px; /* Increase margin */
+    max-width: 800px; /* Set a maximum width */
+    margin-left: auto; /* Align center on page */
+    margin-right: auto; /* Align center on page */
+}
+
+.info {
+	flex: 1;
+	margin-right: 20px;
+}
+
+.info h2 {
+	margin-bottom: 10px;
+}
