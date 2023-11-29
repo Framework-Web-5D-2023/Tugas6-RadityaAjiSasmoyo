@@ -5,28 +5,26 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-// Home
-$routes->get('/', 'Home::index');
-$routes->post('/create', 'Home::createMahasiswa');
-$routes->get('/(:num)', 'Home::detailMahasiswa/$1');
-$routes->get('/updateMahasiswa/(:num)', 'Home::updateMahasiswa/$1');
+// $routes->get('/', 'Home::index');
+$routes->get('/', 'ExtendsController::home');
+$routes->post('/create', 'ExtendsController::createMahasiswa');
+$routes->get('/(:num)', 'ExtendsController::detailMahasiswa/$1');
 
-$routes->post('/updateMahasiswa/update/(:num)', 'Home::updateMahasiswaAction/$1');
-
-// $routes->get('/delete/(:num)', 'Home::deleteMahasiswa/$1');
-$routes->get("delete/(:num)", 'Home::deleteMahasiswa/$1');
+$routes->get('/updateMahasiswa/(:num)', 'ExtendsController::updateMahasiswa/$1');
+$routes->post('/updateMahasiswa/update/(:num)', 'ExtendsController::updateMahasiswaAction/$1');
+$routes->get("delete/(:num)", 'ExtendsController::deleteMahasiswa/$1');
 
 // About
-$routes->get('/about/(:num)/(:any)', 'About::create/$1/$2');
+$routes->get('/about', 'ExtendsController::profile');
+# $routes->get('/about/(:num)/(:any)', 'About::create/$1/$2');
 
 // Login
-$routes->get('/login', 'Login::index');
-$routes->post('/login/signin', 'Login::signin');
-
+$routes->get('/login', 'ExtendsController::index');
+$routes->post('/login/signin', 'ExtendsController::signin');
 // Register
-$routes->get('/login/signup', 'Login::signup');
-$routes->post('/login/signup/create', 'Login::create_signup');
+$routes->get('/login/signup', 'ExtendsController::signup');
+$routes->post('/login/signup/create', 'ExtendsController::create_signup');
 
 // Pertemuan 5 
-$routes->get('/pertemuan5', 'Pertemuan5::index');
-$routes->post('/pertemuan5/create', 'Pertemuan5::create');
+$routes->get('/pertemuan5', 'ExtendsController::index2');
+$routes->post('/pertemuan5/create', 'ExtendsController::create');

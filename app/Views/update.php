@@ -28,7 +28,7 @@
       </ul>
     </div>
   <?php endif ?>
-  <form action="<?= base_url("/updateMahasiswa/update/" . $mahasiswa["id"]); ?>" method="post">
+  <form action="<?= base_url("/updateMahasiswa/update/" . $mahasiswa["id"]); ?>" method="post" enctype="multipart/form-data">
     <div class="row">
       <div class="col-6">
         <div class="mb-3">
@@ -40,7 +40,7 @@
         </div>
         <div class="mb-3">
           <label for="npm" class="form-label">NPM</label>
-          <input type="text" class="form-control <?= (validation_show_error('npm')) ? 'is-invalid' : ''; ?>" id="npm" name="npm" placeholder="Inputan Npm.." value="<?= $mahasiswa["npm"]; ?>">
+          <input type="text" class="form-control <?= (validation_show_error('npm')) ? 'is-invalid' : ''; ?>" id="npm" name="npm" placeholder="Inputan NPM.." value="<?= $mahasiswa["npm"]; ?>">
           <div class="invalid-feedback">
             <?= validation_show_error('npm'); ?>
           </div>
@@ -75,6 +75,11 @@
             <?= validation_show_error('jenis_kelamin'); ?>
           </div>
         </div>
+		<div class="mb-3">
+		  <label for="image" class="form-label">Image</label>
+		  <input type="file" class="form-control" id="image" name="image" placeholder="Inputan Jenis Kelamin.." value="<?= $mahasiswa["image"]; ?>">
+		</div>
+		<input type="hidden" name="old_image" value="<?= $mahasiswa['image']; ?>">
 		
       </div>
       <div>
